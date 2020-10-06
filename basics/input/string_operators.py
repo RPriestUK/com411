@@ -9,6 +9,7 @@ energy = int(input())
 print("Please enter the shield strength:")
 shield = int(input())
 
+#output graphics to visualise entered ints
 print("Health has been set, please standby...")
 
 print("Lives:", "♥" * lives)
