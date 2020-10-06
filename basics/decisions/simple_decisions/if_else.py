@@ -11,4 +11,6 @@ activity = str(input())
 if (activity.lower() =="calculate"):
   print("Performing calculations...")
 else:
-  print("Activity completed, Goodbye.")
+  print("Performing Activity...")
+
+print("Activity completed, Goodbye.")
