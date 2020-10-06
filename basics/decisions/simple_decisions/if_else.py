@@ -8,6 +8,7 @@
 print("Please enter the activity to be performed")
 activity = str(input())
 
-if ("calculate" == activity):
+if (activity.lower() =="calculate"):
   print("Performing calculations...")
-print("Activity completed, Goodbye.")
+else:
+  print("Activity completed, Goodbye.")
