@@ -8,11 +8,11 @@ evencount = 0
 oddcount = 0
 # - Array of numbers entered
 numsentered = []
-# Iterations performed
+# - Iterations for while loop
 i = 0
-# - Array of even numbers
+# - Array of even numbers gathered
 evennums = []
-# - Array of odd numbers
+# - Array of odd numbers gathered
 oddnums = []
 
 # Ask user for first number
@@ -21,11 +21,11 @@ print("I would like to check {} numbers to count the number of odd and even numb
 # Add each entered number to numsentered array 
 while (i < numcount):
   if (i < 1):
-    print("Please enter your first number:")
-    numsentered.append(int(input()))
+    qnum = "first"
   elif (i >= 1):
-    print("Please enter another number:")
-    numsentered.append(int(input()))
+    qnum = "another"
+  print("Please enter {} number:".format(qnum))
+  numsentered.append(int(input()))
   i = i + 1 
 
 # Check each number if odd or even
@@ -40,4 +40,4 @@ evencount = len(evennums)
 oddcount = len(oddnums)
 
 # Display results
-print("In the numbers you have entered, {} are even ({})and {} are odd ({}).".format(evencount, evennums, oddcount, oddnums))
+print("In the numbers you have entered, {} are even ({}) and {} are odd ({}).".format(evencount, evennums, oddcount, oddnums))
