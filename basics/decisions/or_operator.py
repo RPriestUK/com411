@@ -6,6 +6,7 @@
 print("Please enter the type of adventure")
 ad = str(input())
 
+# if adventure chosen is scary or short, then take the dark forest, elseif safe or long, then safe route.
 if ((ad.lower() == "scary") or (ad.lower() == "short")):
   print("Entering the dark forest!")
 elif ((ad.lower() == "safe") or (ad.lower() == "long")):
