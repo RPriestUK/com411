@@ -12,5 +12,5 @@ num2 = int(input())
 
 if (num1 > num2):
   print("Your first number ({}) is the largest.".format(num1))
-elif (num1 < num2):
+else:
   print("Your second number ({}) is the largest.".format(num2))
