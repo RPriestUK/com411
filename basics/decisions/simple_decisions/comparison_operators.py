@@ -11,6 +11,8 @@ print("Please enter a second number:")
 num2 = int(input())
 
 if (num1 > num2):
-  print("Your first number ({}) is the largest.".format(num1))
+  print("Your second number ({}) is the smallest.".format(num2))
+elif (num1 < num2):
+  print("Your first number ({}) is the smallest.".format(num1))
 else:
-  print("Your second number ({}) is the largest.".format(num2))
+  print("Your numbers are equal ({})".format(num1))
