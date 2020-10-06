@@ -4,7 +4,7 @@
 # I am painting in the upward direction!
 
 # Ask user for direction
-print("Which direction should I move the paintbrush?")
+print("Which direction should I move the paintbrush; up, down, left or right?")
 activity = str(input())
 
 # initilise direction variable
