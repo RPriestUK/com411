@@ -35,8 +35,9 @@ for num in numsentered:
   else: 
     evennums.append(num)
 
+# - Count number of odds and evens
 evencount = len(evennums)
 oddcount = len(oddnums)
 
 # Display results
-print("In the numbers you have entered, {} are even and {} are odd.".format(evencount, oddcount))
+print("In the numbers you have entered, {} are even ({})and {} are odd ({}).".format(evencount, evennums, oddcount, oddnums))
