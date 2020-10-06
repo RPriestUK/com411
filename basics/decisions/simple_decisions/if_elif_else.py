@@ -11,16 +11,16 @@ activity = str(input())
 direction = ""
 
 # If to determine direction entered
-if (activity == "up"):
+if (activity.lower() == "up"):
   direction = "upward"
   print("Ok, I'm painting {}.".format(direction))
-elif (activity == "down"):
+elif (activity.lower() == "down"):
   direction = "downward"
   print("Ok, I'm painting {}.".format(direction))
-elif (activity == "left"):
+elif (activity.lower() == "left"):
   direction = "left"
   print("Ok, I'm painting {}.".format(direction))
-elif (activity == "right"):
+elif (activity.lower() == "right"):
   direction = "right"
   print("Ok, I'm painting {}.".format(direction))
 else:
