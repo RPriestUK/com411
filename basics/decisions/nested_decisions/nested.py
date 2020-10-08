@@ -15,10 +15,11 @@
   # "Books with hard covers can be more expensive!"
 # else error
 
-
+# Ask user for cover type
 print("What type of cover does the book have, hard or soft?")
 covertype = str(input())
 
+# Check type and display relevant message
 if (covertype.lower() == "soft"):
   print("Is the cover 'Perfect Bound'?")
   bound = str(input())

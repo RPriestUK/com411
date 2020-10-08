@@ -19,9 +19,11 @@
 
 # Done!
 
+# Ask user for number of rows
 print("How many rows should I have?")
 r = int(input())
 
+# Ask user for number of columns
 print("How many columns should I have?")
 c = int(input())
 
@@ -32,7 +34,7 @@ ae = ":-)"
 
 # range(start, stop, step)
 # number of rows then number of columns
-for count in range(0, r, 1):
-    for number in range(0, c, 1):
+for rows in range(0, r, 1):
+    for columns in range(0, c, 1):
         print(ae, end="")
     print()
