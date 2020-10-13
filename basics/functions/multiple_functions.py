@@ -10,7 +10,7 @@
 
 def display_ladder(steps):
   
-  # initialise iteration and 
+  # initialise iteration and top of ladder
   i = 0 
   print("    | |")
 
