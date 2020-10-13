@@ -11,20 +11,18 @@
 
 # The phrase is: Hocus Pocus
 
-
+# Ask user for phrase to reverse
 print("What phrase do you see?")
 p = str(input())
 
-print()
-print("Reversing...")
-print()
+
+print("\nReversing...")
 
 # reverse the phrase
 # initialise as empty string
 rp = ""
-for item in reversed(p):
-  rp = rp + item
+for letter in p:
+  rp = letter + rp
 
 # display reversed phrase
-print("The phrase is: {}".format(rp))
-print()
+print("\nThe phrase is: {}".format(rp))

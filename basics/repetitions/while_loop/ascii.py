@@ -10,15 +10,15 @@
 print("How many bars should be charged?")
 n = int(input())
 
-# Initialise level of charge
+# Initialise level of charge and spacing
 lc = 0
+print= ()
 
 # loop while level of charge is less than number entered
 while (lc < n):
-  print()
   print("Charging:", end = "")
   lc = lc + 1
   # display an ascii icon for battery level for each level of charge
   print(" █ " * lc)
-print()
-print("The battery is fully charged.")
+
+print("\nThe battery is fully charged.")

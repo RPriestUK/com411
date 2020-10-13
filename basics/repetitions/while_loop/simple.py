@@ -11,6 +11,7 @@ n = int(input())
 # number of cables removed
 i = 0
 
+# Loop through cables to remove
 while (i < n):
   print("Removed cable.")
   i = i + 1
