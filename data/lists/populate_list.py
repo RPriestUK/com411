@@ -32,12 +32,8 @@ def menu():
   # Display Menu List
   for i in range(0, len(get_directions), 1):
     print("{}: {}.".format(i, get_directions[i]))
-  # User selection
-  ud = int(input())
-  # Display user's selection
-  for d in range(0, len(get_directions), 1):
-    if ud == d:
-      menu_item = "{}.".format(get_directions[d])
+  # User menu item selection
+  menu_item = get_directions[int(input())]
   return menu_item
 
 def run():
