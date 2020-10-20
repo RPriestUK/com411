@@ -29,21 +29,15 @@ def directions():
 def menu():
   print("Please select a direction:")
   get_directions = directions()
-  # initialise iteration variable
-  i = 0
   # Display Menu List
-  for i in range(len(get_directions)):
+  for i in range(0, len(get_directions), 1):
     print("{}: {}.".format(i, get_directions[i]))
-    i = i + 1  
   # User selection
   ud = int(input())
-  # Initialise direction iteration variable
-  d = 0
   # Display user's selection
-  for d in range(len(get_directions)):
+  for d in range(0, len(get_directions), 1):
     if ud == d:
       menu_item = "{}.".format(get_directions[d])
-    d = d + 1  
   return menu_item
 
 def run():

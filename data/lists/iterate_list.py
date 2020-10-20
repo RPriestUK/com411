@@ -26,11 +26,9 @@ def menu():
   
   # initialise vars
   menu_items = []
-  i = 0
 
-  for i in range(len(get_directions)):
+  for i in range(0, len(get_directions), 1):
     print("{}: {}.".format(i, get_directions[i]))
-    i = i + 1
   return menu_items
 
 def run():

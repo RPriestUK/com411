@@ -10,6 +10,7 @@
 # The function should call the first function and display the list returned by the call.
 
 def directions():
+  # Initialise list and populate with values
   directions = ["Move Forward", "Move Backward", "Turn Left", "Turn Right"]
   return directions
   
