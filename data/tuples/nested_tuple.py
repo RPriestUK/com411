@@ -41,7 +41,6 @@ def run():
     else:
       good_steps.append(all_steps[index])
 
-
   # Display output by listing the count (length) of each list
   print("Good steps: {}, Bad steps: {}".format(len(good_steps), len(bad_steps)))
 
