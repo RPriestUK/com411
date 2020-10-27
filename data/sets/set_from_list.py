@@ -11,9 +11,12 @@ def observed():
 def run():
   print("Counting observations...")
   # assign to local set 'seen'
-  seen = observed()
-  # count number of each instance entered
-  for seen_obj in range(0, len(seen), 1):
-    print(seen_obj)
+  observations = observed()
+  observations_set = set()
 
+  # count number of each instance entered
+  for observation in observations:
+    observations_set.add((observation,observations.count(observation)))
+
+  print(observations_set)
 run()
