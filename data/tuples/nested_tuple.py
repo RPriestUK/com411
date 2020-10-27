@@ -37,9 +37,9 @@ def run():
     step = all_steps[index]
     # Add data from tuple to relevant good/bad lists
     if (step[1] >= 50):
-      bad_steps.append(all_steps[index])
+      bad_steps.append(step)
     else:
-      good_steps.append(all_steps[index])
+      good_steps.append(step)
 
   # Display output by listing the count (length) of each list
   print("Good steps: {}, Bad steps: {}".format(len(good_steps), len(bad_steps)))
