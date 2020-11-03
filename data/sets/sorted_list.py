@@ -43,7 +43,7 @@ def remove_observations(observations):
       # discard entry if matching the input
       if (ob_to_rem == observations):
         # Remove observation
-        observations.discard(ob_to_rem)
+        observations.remove(ob_to_rem)
     else: 
       # exit loop
       is_running = False
