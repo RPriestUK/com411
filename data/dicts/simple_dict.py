@@ -13,10 +13,12 @@
 # {'Short Sequence':3, 'Medium Sequence':2, 'Long Sequence':1}
 
 def pattern():
+  # populate the dictionary
   sequences = {"Short Sequence":3, "Medium Sequence":2, "Long Sequence":1}
   return sequences
 
 def run():
+  # display dictionary
   print(pattern())
 
 
