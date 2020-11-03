@@ -26,6 +26,6 @@ def search(filename):
   print("\n...Done!")
 
 def run():
-  search("data/files/txt/locations.txt")
+  search("../../../locations.txt")
 
 run()
