@@ -59,7 +59,7 @@ def search(filename):
       if line.startswith('Section') == True:
         # Add section name to sections list
         # split the Section:SectionName and replace trailing new line with comma
-        section = line.split(':')[1].replace("\n", ", ")
+        section = line.split(':')[1].replace("\n", ", ") # use [:-1] instead of replace!!
         sections.append(section)
       else:
         # Add book name to books list
