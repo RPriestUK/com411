@@ -48,4 +48,4 @@ def run():
     main_menu(is_running)
     
 # Start the program
-run()
+# run()
