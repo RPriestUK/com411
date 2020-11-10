@@ -47,11 +47,11 @@ def search(filename):
       if line.startswith('Section') == True:
         # Add section name to dictionary
         # split the Section:SectionName and remove trailing new line char
-        section = line.split(':')[1][:-1]
+        section = line.split(':')[1].replace("\n", ", ")
       else:
         # Add book name to dictionary
         # remove trailing new line char
-        book = line[:-1]
+        book = line.replace("\n", ", ")
         data[section] = book
   
   print("Done!")

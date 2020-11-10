@@ -46,7 +46,7 @@
 # Books: The Magna Carta, How to build a robot, How to build a flying car, The history of everything
 
 def search(filename):
-  print("Searching...")
+  print("Searching...", end ="")
   # Initialise lists
   sections = []
   books = []
@@ -59,7 +59,8 @@ def search(filename):
       if line.startswith('Section') == True:
         # Add section name to sections list
         # split the Section:SectionName and replace trailing new line with comma
-        section = line.split(':')[1].replace("\n", ", ") # use [:-1] instead of replace!!
+        # can use [:-1] instead of replace for last char (issue is if \n is not last char)
+        section = line.split(':')[1].replace("\n", ", ") 
         sections.append(section)
       else:
         # Add book name to books list
@@ -71,7 +72,7 @@ def search(filename):
 
 # Save file
 def save(filename, data):
-  print("Saving...")
+  print("Saving...", end ="")
   
   # Open file
   with open(filename, "w") as file:
