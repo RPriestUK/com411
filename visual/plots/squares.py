@@ -15,6 +15,12 @@
 # import library
 import matplotlib.pyplot as plt
 
+# -- = dashed line 
+# - = solid line 
+# o = circle 
+# s = square 
+# p = pentagon
+
 def small():
   # The function should display a small square using a line plot.
   # The line should be a red dotted line with circle markers.
