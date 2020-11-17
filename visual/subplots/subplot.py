@@ -16,8 +16,8 @@ import matplotlib.pyplot as plt
 
 def read_data(filepathname):
   # The function should start by opening the specified file in read mode.  
-  data = []
   # The function should then read each line in the file and store it into a list.
+  data = []
   with open(filepathname, "r") as file:
     lines = file.readlines()
     for line in lines:
@@ -30,8 +30,10 @@ def read_data(filepathname):
 def run():
   # The function should start by calling the first function with the file path and name visual/subplots/temps.txt and assign the resulting list of values to a local variable named data.
   data = (read_data("visual/subplots/temps.txt"))
+  
   # The function should then display the list of values named data in a Matplotlib graph consisting of two subplots placed horizontally.  
-  fig, axs = plt.subplots(1,2)
+  fig, axs = plt.subplots(1,2) # (rows, cols, params)
+
   # The first subplot should show the data as a line graph and the second subplot should show the data as a bar chart.
   axs[0].plot(data)
   axs[1].bar(data, height=1)

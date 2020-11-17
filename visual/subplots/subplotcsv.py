@@ -18,32 +18,28 @@ import matplotlib.pyplot as plt
 import csv
 
 def read_data(): 
-  # The function should read the file visual/subplots/temps.csv and store its contents into a dictionary so that the dictionary contains the following key-value pairs:
-  # {
-  #     'week1':[12, 14, 16, 15, 17, 16, 17],
-  #     'week2':[18, 21, 20, 21, 23, 17, 16]
-  # }
+  # The function should read the file visual/subplots/temps.csv and store its contents into a dictionary 
   
   # initialise vars
   data = {}
-  row_count = 0
+  rowid = 0
 
   with open("visual/subplots/temps.csv") as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-    # check each row for data, first row create keys, else append data to appropriate key
+    # check each row for data, on first row - create keys, else append data to appropriate key
     for row in csv_reader:
-      if row_count == 0:
+      if rowid == 0:
         for item in row:
+          # initialise new key with empty list value
           data[item] = []
       else:
-        column = 0
+        # loop through columns to add values to each key
         for key in data:
-          data[key].append(row[column])
-          column += 1
-      row_count += 1
-      
+          columnid = 0
+          data[key].append(row[columnid])
+          columnid += 1
+      rowid += 1
     csvfile.close()
-  
   return data
 
 def run():
@@ -59,7 +55,7 @@ def run():
   fig, axs = plt.subplots(numberofplots, 1, sharex=True) # (rows, cols, params)
   fig.suptitle('Temperature per week')
 
-  # loop through keys in dictionary (data) and create graph
+  # loop through keys in dictionary (data) and create graph with labels
   for key in data:
     axs[plot].plot(data[key])
     axs[plot].set_xlabel('Day')
