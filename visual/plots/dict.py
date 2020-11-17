@@ -97,6 +97,7 @@ def coordinates():
   # create random plot start and end coordinates for each line
   x = []
   y = []
+  # count 2 for start & end
   for count in range(2):
     x.append(random.randint(1, 20))
     y.append(random.randint(1, 20))
