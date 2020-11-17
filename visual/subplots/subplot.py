@@ -13,7 +13,6 @@
 # Code your solution and be sure to include appropriate comments in your code.
 
 import matplotlib.pyplot as plt
-import csv  
 
 def read_data(filepathname):
   # The function should start by opening the specified file in read mode.  
