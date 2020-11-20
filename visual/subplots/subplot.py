@@ -21,7 +21,7 @@ def read_data(filepathname):
   with open(filepathname, "r") as file:
     lines = file.readlines()
     for line in lines:
-      data.append(line)
+      data.append(float(line.strip()))
   # The function should then close the file if it is not automatically closed.
     file.close()
   # Finally, the function should return the list of values.

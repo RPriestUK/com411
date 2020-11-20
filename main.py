@@ -45,7 +45,7 @@ def run():
     is_running = True
 
     # Launch the main menu
-    main_menu(is_running)
+    #main_menu(is_running)
     
 # Start the program
-# run()
+run()

@@ -31,12 +31,12 @@ def read_data():
       if rowid == 0:
         for item in row:
           # initialise new key with empty list value
-          data[item] = []
+          data[item.strip()] = []
       else:
         # loop through columns to add values to each key
         for key in data:
           columnid = 0
-          data[key].append(row[columnid])
+          data[key].append(row[columnid].strip())
           columnid += 1
       rowid += 1
     csvfile.close()
