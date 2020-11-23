@@ -34,10 +34,11 @@ def read_data():
           data[item.strip()] = []
       else:
         # loop through columns to add values to each key
-        for key in data:
           columnid = 0
-          data[key].append(row[columnid].strip())
-          columnid += 1
+          for item in row:
+            for key in data:
+              data[key].append(row[columnid].strip())
+            columnid += 1
       rowid += 1
     csvfile.close()
   return data

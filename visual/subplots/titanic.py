@@ -27,52 +27,55 @@ import csv
 def read_data():
   # The function should read the file visual/subplots/titanic.csv and store its content into a dictionary so that the dictionary contains the following key-value pairs
   data = {}
-  # Provide application with list of expected data
+  # Provide application with list of expected data (or blank list)
   listOfValidItems = ['Survived', 'Sex', 'Age', 'Fare'] # accepted data items
   # initialise other variables
   validColumns = []
-  headerid = 0
-  rowid = 0  
+  headerID = 0
+  rowID = 0  
 
   # read from CSV file, check for valid columns and add the relevant data.
-  with open("visual/subplots/titanic.csv") as csvfile:
-    csv_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+  with open("visual/subplots/titanic.csv") as csvFile:
+    csv_reader = csv.reader(csvFile, delimiter=',', quotechar='"')
     # check each row for data, on first row - create keys, else append data to appropriate key
     for row in csv_reader:
-      if (rowid == 0): # add headers
+      if (rowID == 0): # add headers
         for header in row:
           # tidy up header value 
           headerName = header.strip()
           # initialise new key with empty list value
           if (headerName in listOfValidItems):
             data[headerName] = [] # adds key to data dictionary
-            validColumns.append((headerid, headerName)) # adds tuple to list of valid columns
+            validColumns.append((headerID, headerName)) # adds tuple to list of valid columns
           # If list is empty, then add all columns
           elif (listOfValidItems == []):
             data[headerName] = [] # adds key to data dictionary
-            validColumns.append((headerid, headerName)) # adds tuple to list of valid columns
+            validColumns.append((headerID, headerName)) # adds tuple to list of valid columns
           else:
             pass #ignore
-          headerid += 1
+          headerID += 1
       else:
         # loop through columns to add values to each key
-        columnid = 0
+        columnID = 0
+        skipRow = 0
         for item in row:
           # check for invalid (blank) data before processing
-          if (item is not None):
+          if (item is None):
+            skipRow += 1
+          if (skipRow == 0):
             # loop through each validColumn to retrieve column referencing
             for index in range(0, len(validColumns), 1):
               # Retrieve each column from validColumns for each index location
               validColumn = validColumns[index]
               # Check current column matches valid column and use tuple matching relevant key in data dictionary
-              if (validColumn[0] == columnid):
+              if (validColumn[0] == columnID):
                 for key in data:
                   # if key name matches column name, add data to key
                   if (key == validColumn[1]):
                       data[key].append(item.strip())
-          columnid += 1
-      rowid += 1
-    csvfile.close() # Closes file to prevent locking and performance issues. 
+          columnID += 1
+      rowID += 1
+    csvFile.close() # Closes file to prevent locking and performance issues. 
   return data
 
 def run():
@@ -80,11 +83,11 @@ def run():
   data = read_data()
 
   # initialise vars for dynamic plot creation according to number of keys
-  plot = 0
-  numberofplots = len(data)
+  #plot = 0
+  numberOfPlots = len(data)
 
   # The function should then produce 4 subplots using Matplotlib. Each subplot should show any two of data sets (e.g. age and survived) plotted against one another using a suitable method (e.g. plot).  You are free to pick any visualisation method you wish but they must be appropriate to the data set and the insights you wish to make.
-  fig, axs = plt.subplots(2, 1) # (rows, cols, params)
+  fig, axs = plt.subplots(numberOfPlots, 1) # (rows, cols, params)
   fig.suptitle('Titanic Passenger Data')
 
   # loop through keys in dictionary (data) and create graph with labels
@@ -95,9 +98,7 @@ def run():
   #  axs[plot].set_title(key)
   #  plot += 1
 
-  #print(dataSex)
-
-  # sex vs. survived - bar - m/f-sur // m/f-notsur
+  # age vs. survived - bar - m/f-sur // m/f-notsur
   axs[0].scatter(data['Age'], data['Age']) 
   axs[0].plot(data['Survived']) 
   axs[0].set_ylabel('Age')
