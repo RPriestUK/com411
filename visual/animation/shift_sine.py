@@ -19,8 +19,10 @@ def animate(frame):
   # retrieve value of pi for creating y value
   pi = np.pi
 
+  # clears previous lines to prevent overlap of frames
   ax.cla()
-  # declare max sizes to fix figure size from start, y requires to be a minus value if x is positive/0
+
+  # declare max sizes to fix figure size from start, y requires to be a minus value if x is positive or 0
   ax.set_xlim(0,pi)
   ax.set_ylim(-1.5,1.5)
   
