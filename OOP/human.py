@@ -55,12 +55,16 @@ class Robot:
   def eat(self, amount=0):
     if (self.energy + amount) < Human.MAX_ENERGY:
       self.energy += amount
-  
+    else:
+      print("I can't eat that, I'm too full!")
+        
   # robot moves as per distance parameter, but won't move if energy level reduces further than 0
   def move(self, distance=0):
     if (self.energy - distance) > 0:
       self.energy -= distance
-      
+    else:
+      print("I can't do that, I'm too tired!")
+
   # repr string, used for debugging
   def __repr__(self):
     return f'robot(name={self.name}, age={self.age})'
@@ -94,11 +98,15 @@ class Human:
   def eat(self, amount=0):
     if (self.energy + amount) < Human.MAX_ENERGY:
       self.energy += amount
+    else:
+      print("I can't eat that, I'm too full!")
   
   # human moves as per distance parameter, but won't move if energy level reduces further than 0
   def move(self, distance=0):
     if (self.energy - distance) > 0:
       self.energy -= distance
+    else:
+      print("I can't do that, I'm too tired!")
 
   # repr string, used for debugging
   def __repr__(self):
