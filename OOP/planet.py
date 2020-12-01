@@ -78,7 +78,7 @@ class Planet:
 
   # str string for user friendly output
   def __str__(self):
-    return f'The Planet Class contains 1 dictionary of 2 lists; {self.inhabitants}.'
+    return f"The Planet contains 1 dictionary of 2 lists; Humans: {self.inhabitants['humans']} & Robots:{self.inhabitants['robots']}."
 
 # You should add suitable code to create and test your class Planet.
 if (__name__ == "__main__"):
