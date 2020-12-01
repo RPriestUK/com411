@@ -47,6 +47,20 @@ class Robot:
   def display(self):
     print(f"I am {self.name}")
   
+  # grows by 1 year
+  def grow(self):
+    self.age += 1
+  
+  # robot can eat to regain energy, but cannot exceed MAX_ENERGY
+  def eat(self, amount=0):
+    if (self.energy + amount) < Human.MAX_ENERGY:
+      self.energy += amount
+  
+  # robot moves as per distance parameter, but won't move if energy level reduces further than 0
+  def move(self, distance=0):
+    if (self.energy - distance) > 0:
+      self.energy -= distance
+      
   # repr string, used for debugging
   def __repr__(self):
     return f'robot(name={self.name}, age={self.age})'
@@ -71,6 +85,20 @@ class Human:
   # An instance method
   def display(self):
     print(f"I am {self.name}")
+  
+  # grow by 1 year
+  def grow(self):
+    self.age += 1
+  
+  # human can eat to regain energy, but cannot exceed MAX_ENERGY
+  def eat(self, amount=0):
+    if (self.energy + amount) < Human.MAX_ENERGY:
+      self.energy += amount
+  
+  # human moves as per distance parameter, but won't move if energy level reduces further than 0
+  def move(self, distance=0):
+    if (self.energy - distance) > 0:
+      self.energy -= distance
 
   # repr string, used for debugging
   def __repr__(self):
@@ -91,3 +119,8 @@ if (__name__ == "__main__"):
   print(repr(robot))
   print() 
   print(str(robot))
+  print()
+  human.move(20)
+  print(human.energy)
+  human.eat(30)
+  print(human.energy)
