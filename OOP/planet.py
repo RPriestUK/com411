@@ -29,8 +29,10 @@ class Planet:
   #   robots - a list of robot objects (initially an empty list)
   def __init__(self):
 
-    self.humans = []
-    self.robots = []
+    self.inhabitants = {
+      'humans': [],
+      'robots': []
+    }
   
   # The class should contain the following instance methods:
 
@@ -41,16 +43,28 @@ class Planet:
   #   remove_robot - removes a robot object from the list of robots
 
   def add_human(self, human):
-    self.humans.append(human)
+    # adds entered inhabitant to humans list
+    self.inhabitants['humans'].append(human)
   
   def remove_human(self, human):
-    self.humans.remove(human)
+    # checks the inhabitant is in the list and removes them, otherwise displays error
+    if (self.inhabitants['humans'].count(human) <= 0):
+      print("The inhabitant '{}' is not in the 'Humans' list".format(human))
+      print() 
+    else:
+      self.inhabitants['humans'].remove(human)
   
   def add_robot(self, robot):
-    self.robots.append(robot)
+    # adds entered inhabitant to robots list
+    self.inhabitants['robots'].append(robot)
   
   def remove_robot(self, robot):
-    self.robots.remove(robot)
+    # checks the inhabitant is in the list and removes them, otherwise displays error
+    if (self.inhabitants['robots'].count(robot) <= 0):
+      print("The inhabitant '{}' is not in the 'Robots' list".format(robot))
+      print() 
+    else:
+      self.inhabitants['robots'].remove(robot)
   
   # The class should contain the following magic methods:
 
@@ -60,15 +74,16 @@ class Planet:
 
   # repr string, used for debugging
   def __repr__(self):
-    return f'planet(humans={self.humans}, robots={self.robots})'
+    return f'planet(inhabitants={self.inhabitants})'
 
   # str string for user friendly output
   def __str__(self):
-    return f'The Planet Class contains 2 lists; Humans: {self.humans} and Robots: {self.robots}.'
+    return f'The Planet Class contains 1 dictionary of 2 lists; {self.inhabitants}.'
 
 # You should add suitable code to create and test your class Planet.
 if (__name__ == "__main__"):
   planet = Planet()
+  print() 
   print("User friendly (str):")
   print(str(planet))
   print() 
@@ -84,6 +99,7 @@ if (__name__ == "__main__"):
   planet.add_robot("Boop")
   planet.add_robot("Wall-e")
   # remove from human list to confirm
+  planet.remove_human("Dick")
   planet.remove_human("Dick")
   # remove from robot list to confirm
   planet.remove_robot("Boop")
