@@ -25,42 +25,24 @@
 #   human = Human()
 #   human.display()class Robot:
 
+# import super class 'Inhabitant'
+from inhabitant import Inhabitant
 
-class Human:
+class Human(Inhabitant):
 
-  # A class attribute
-  MAX_ENERGY = 100
-
+  # class attributes
+  
   # An initialiser (special instance method)
   def __init__(self, name="Human", age=0):
-
-    # An instance attribute
+    # instance attributes
     self.name = name
     self.age = age
-    self.energy = Human.MAX_ENERGY
-
+    self.energy = self.MAX_ENERGY
+    
   # An instance method
   def display(self):
     print(f"I am {self.name}")
   
-  # grow by 1 year
-  def grow(self):
-    self.age += 1
-  
-  # human can eat to regain energy, but cannot exceed MAX_ENERGY
-  def eat(self, amount=0):
-    if (self.energy + amount) < Human.MAX_ENERGY:
-      self.energy += amount
-    else:
-      print("I can't eat that, I'm too full!")
-  
-  # human moves as per distance parameter, but won't move if energy level reduces further than 0
-  def move(self, distance=0):
-    if (self.energy - distance) > 0:
-      self.energy -= distance
-    else:
-      print("I can't do that, I'm too tired!")
-
   # repr string, used for debugging
   def __repr__(self):
     return f'human(name={self.name}, age={self.age})'
@@ -72,11 +54,11 @@ class Human:
 # default invisible name for program
 if (__name__ == "__main__"):
   human = Human()
-  print(repr(human))
-  print() 
+  # print(repr(human))
+  # print() 
   print(str(human))
   print()
-  human.move(20)
-  print(human.energy)
-  human.eat(30)
-  print(human.energy)
+  # human.move(20)
+  # print(human.energy)
+  # human.eat(30)
+  # print(human.energy)
