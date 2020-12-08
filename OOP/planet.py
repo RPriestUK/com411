@@ -20,8 +20,10 @@
 
 #    __str__ - return a string containing an informal representation of a planet object (includes the list of humans and the list of robots)
 
-
 # You should add suitable code to create and test your class Planet.
+
+from robot import Robot
+from human import Human
 
 class Planet:
   # The class should contain the following instance variables:
@@ -91,13 +93,19 @@ if (__name__ == "__main__"):
   print(repr(planet))
   print() 
   # add to human list to populate
-  planet.add_human("Bob")
-  planet.add_human("Dick")
-  planet.add_human("Harry")
+  bob = Human("Bob", 5)
+  dick = Human("Dick", 15)
+  harry = Human("Harry", 98)  
+  planet.add_human(bob)
+  planet.add_human(dick)
+  planet.add_human(harry)
   # add to robot list to populate
-  planet.add_robot("Beep")
-  planet.add_robot("Boop")
-  planet.add_robot("Wall-e")
+  beep = Robot("Beep")
+  boop = Robot("Boop", 6)
+  walle = Robot("Wall-e", 3)
+  planet.add_robot(beep)
+  planet.add_robot(boop)
+  planet.add_robot(walle)
   # remove from human list to confirm
   planet.remove_human("Dick")
   planet.remove_human("Dick")
