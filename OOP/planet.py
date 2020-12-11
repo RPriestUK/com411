@@ -26,13 +26,13 @@ from robot import Robot
 from human import Human
 
 class Planet:
-  # generate empty list of inhabitants
-  inhabitants = []
-
   # instance variables:
+  
+
   def __init__(self):
-    pass
-    
+    # generate empty list of inhabitants
+    self.inhabitants = []
+
   def add_inhabitant(self, inhabitant):
     # adds entered inhabitant to list
     self.inhabitants.append(inhabitant)
